@@ -4,14 +4,14 @@
       <!-- 头部区域 -->
       <Header v-if="state.show">
         <!-- logo -->
-        <span class="logo">
+        <!-- <span class="logo">
           <a href="https://github.com/nihaojob/vue-fabric-editor" target="_blank">
             <Icon type="logo-github" :size="30" />
           </a>
-        </span>
+        </span> -->
 
         <!-- 导入 -->
-        <import-JSON></import-JSON>
+        <!-- <import-JSON></import-JSON> -->
         <Divider type="vertical" />
         <import-file></import-file>
         <Divider type="vertical" />
@@ -37,7 +37,7 @@
       <Content style="display: flex; height: calc(100vh - 64px)">
         <!-- 左侧区域 -->
         <div v-if="state.show" :class="`left-bar ${state.toolsBarShow && 'show-tools-bar'}`">
-          <Menu :active-name="state.menuActive" accordion @on-select="showToolsBar" width="65px">
+          <!-- <Menu :active-name="state.menuActive" accordion @on-select="showToolsBar" width="65px">
             <MenuItem :name="1" class="menu-item">
               <Icon type="md-book" size="24" />
               <div>{{ $t('templates') }}</div>
@@ -54,30 +54,30 @@
               <Icon type="md-reorder" size="24" />
               <div>{{ $t('layers') }}</div>
             </MenuItem>
-          </Menu>
+          </Menu> -->
 
           <div class="content" v-show="state.toolsBarShow">
             <!-- 生成模板 -->
-            <div v-show="state.menuActive === 1" class="left-panel">
+            <!-- <div v-show="state.menuActive === 1" class="left-panel">
               <import-tmpl></import-tmpl>
-            </div>
+            </div> -->
             <!-- 常用元素 -->
-            <div v-show="state.menuActive === 2" class="left-panel">
+            <div class="left-panel">
               <tools></tools>
-              <fontTmpl></fontTmpl>
+              <!-- <fontTmpl></fontTmpl> -->
             </div>
             <!-- 卡通素材 -->
-            <div v-show="state.menuActive === 3" class="left-panel">
+            <!-- <div v-show="state.menuActive === 3" class="left-panel">
               <importSvgEl></importSvgEl>
-            </div>
+            </div> -->
             <!-- 图层设置 -->
-            <div v-show="state.menuActive === 4" class="left-panel">
+            <!-- <div v-show="state.menuActive === 4" class="left-panel">
               <layer></layer>
-            </div>
+            </div> -->
           </div>
 
           <!-- 关闭按钮 -->
-          <div class="close-btn" v-show="state.toolsBarShow" @click="hideToolsBar"></div>
+          <!-- <div class="close-btn" v-show="state.toolsBarShow" @click="hideToolsBar"></div> -->
         </div>
 
         <!-- 画布区域 -->
@@ -296,7 +296,7 @@ provide('canvasEditor', canvasEditor);
   position: relative;
 
   &.show-tools-bar {
-    width: 380px;
+    width: 100px;
   }
 }
 // 右侧容器
@@ -409,7 +409,7 @@ provide('canvasEditor', canvasEditor);
 
 .content {
   flex: 1;
-  width: 220px;
+  width: 100px;
   padding: 10px;
   padding-top: 0;
   height: 100%;
