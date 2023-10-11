@@ -106,8 +106,8 @@ function insertImgFile(file) {
     const imgInstance = new fabric.Image(imgEl, {
       id: uuid(),
       name: '图片1',
-      left: 100,
-      top: 100,
+      left: 0,
+      top: 0,
     });
     // 设置缩放
     canvasEditor.canvas.add(imgInstance);
