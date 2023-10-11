@@ -8,15 +8,23 @@
 
 const cnList = [
   {
-    name: '汉体',
-    fontFamily: '汉体',
+    name: '思源黑体',
+    fontFamily: '思源黑体',
   },
   {
-    name: '华康金刚黑',
-    fontFamily: '华康金刚黑',
+    name: '阿里巴巴普惠',
+    fontFamily: '阿里巴巴普惠',
   },
 ];
-
-const enList = [];
+const enList = [
+  {
+    name: 'IMPACT',
+    fontFamily: 'IMPACT',
+  },
+  {
+    name: 'DIN',
+    fontFamily: 'DIN',
+  },
+];
 
 export default [...cnList, ...enList];

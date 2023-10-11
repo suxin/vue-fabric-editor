@@ -1,9 +1,19 @@
 @font-face {
-  font-family: '汉体';
-  src: url('./cn/汉体.ttf');
+  font-family: '思源黑体';
+  src: url('./cn/SourceHanSansCN-Bold.otf');
 }
 
 @font-face {
-  font-family: '华康金刚黑';
-  src: url('./cn/华康金刚黑.ttf');
+  font-family: '阿里巴巴普惠';
+  src: url('./cn/Alibaba-PuHuiTi-Bold.otf');
+}
+
+@font-face {
+  font-family: 'IMPACT';
+  src: url('./cn/IMPACT.ttf');
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('./cn/DINPro-Black.otf');
 }
