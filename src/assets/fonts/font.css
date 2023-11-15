@@ -1,11 +1,51 @@
 @font-face {
-  font-family: '思源黑体';
+  font-family: '思源-Bold';
   src: url('./cn/SourceHanSansCN-Bold.otf');
+}
+@font-face {
+  font-family: '思源-ExtraLight';
+  src: url('./cn/SourceHanSansCN-ExtraLight.otf');
+}
+@font-face {
+  font-family: '思源-Heavy';
+  src: url('./cn/SourceHanSansCN-Heavy.otf');
+}
+@font-face {
+  font-family: '思源-Light';
+  src: url('./cn/SourceHanSansCN-Light.otf');
+}
+@font-face {
+  font-family: '思源-Medium';
+  src: url('./cn/SourceHanSansCN-Medium.otf');
+}
+@font-face {
+  font-family: '思源-Normal';
+  src: url('./cn/SourceHanSansCN-Normal.otf');
+}
+@font-face {
+  font-family: '思源-Regular';
+  src: url('./cn/SourceHanSansCN-Regular.otf');
 }
 
 @font-face {
-  font-family: '阿里巴巴普惠';
+  font-family: '阿里巴巴-Bold';
   src: url('./cn/Alibaba-PuHuiTi-Bold.otf');
+}
+@font-face {
+  font-family: '阿里巴巴-Heavy';
+  src: url('./cn/Alibaba-PuHuiTi-Heavy.otf');
+}
+@font-face {
+  font-family: '阿里巴巴-Light';
+  src: url('./cn/Alibaba-PuHuiTi-Light.otf');
+}
+@font-face {
+  font-family: '阿里巴巴-Medium';
+  src: url('./cn/Alibaba-PuHuiTi-Medium.otf');
+}
+@font-face {
+  font-family: '阿里巴巴-Regular';
+  src: url('./cn/Alibaba-PuHuiTi-Regular.otf');
 }
 
 @font-face {
@@ -14,6 +54,39 @@
 }
 
 @font-face {
-  font-family: 'DIN';
+  font-family: 'DIN-Black';
   src: url('./cn/DINPro-Black.otf');
+}
+@font-face {
+  font-family: 'DIN-Bold';
+  src: url('./cn/DINPro-Bold.otf');
+}
+@font-face {
+  font-family: 'DIN-Light';
+  src: url('./cn/DINPro-Light.otf');
+}
+@font-face {
+  font-family: 'DIN-Medium';
+  src: url('./cn/DINPro-Medium.otf');
+}
+@font-face {
+  font-family: 'DIN-Regular';
+  src: url('./cn/DINPro-Regular.otf');
+}
+
+@font-face {
+  font-family: 'WMFRotis-Bold';
+  src: url('./cn/WMFRotis-Bold.otf');
+}
+@font-face {
+  font-family: 'WMFRotis-Light';
+  src: url('./cn/WMFRotis-Light.otf');
+}
+@font-face {
+  font-family: 'WMFRotis-LightItalic';
+  src: url('./cn/WMFRotis-LightItalic.otf');
+}
+@font-face {
+  font-family: 'WMFRotis-Medium';
+  src: url('./cn/WMFRotis-Medium.otf');
 }

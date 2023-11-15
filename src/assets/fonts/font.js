@@ -8,12 +8,52 @@
 
 const cnList = [
   {
-    name: '思源黑体',
-    fontFamily: '思源黑体',
+    name: '思源-Bold',
+    fontFamily: '思源-Bold',
   },
   {
-    name: '阿里巴巴普惠',
-    fontFamily: '阿里巴巴普惠',
+    name: '思源-ExtraLight',
+    fontFamily: '思源-ExtraLight',
+  },
+  {
+    name: '思源-Heavy',
+    fontFamily: '思源-Heavy',
+  },
+  {
+    name: '思源-Light',
+    fontFamily: '思源-Light',
+  },
+  {
+    name: '思源-Medium',
+    fontFamily: '思源-Medium',
+  },
+  {
+    name: '思源-Normal',
+    fontFamily: '思源-Normal',
+  },
+  {
+    name: '思源-Regular',
+    fontFamily: '思源-Regular',
+  },
+  {
+    name: '阿里巴巴-Bold',
+    fontFamily: '阿里巴巴-Bold',
+  },
+  {
+    name: '阿里巴巴-Heavy',
+    fontFamily: '阿里巴巴-Heavy',
+  },
+  {
+    name: '阿里巴巴-Light',
+    fontFamily: '阿里巴巴-Light',
+  },
+  {
+    name: '阿里巴巴-Medium',
+    fontFamily: '阿里巴巴-Medium',
+  },
+  {
+    name: '阿里巴巴-Regular',
+    fontFamily: '阿里巴巴-Regular',
   },
 ];
 const enList = [
@@ -22,8 +62,44 @@ const enList = [
     fontFamily: 'IMPACT',
   },
   {
-    name: 'DIN',
-    fontFamily: 'DIN',
+    name: 'DIN-Black',
+    fontFamily: 'DIN-Black',
+  },
+  {
+    name: 'DIN-Bold',
+    fontFamily: 'DIN-Bold',
+  },
+  {
+    name: 'DIN-Light',
+    fontFamily: 'DIN-Light',
+  },
+  {
+    name: 'DIN-Medium',
+    fontFamily: 'DIN-Medium',
+  },
+  {
+    name: 'DIN-Regular',
+    fontFamily: 'DIN-Regular',
+  },
+  {
+    name: 'arial',
+    fontFamily: 'arial',
+  },
+  {
+    name: 'WMFRotis-Bold',
+    fontFamily: 'WMFRotis-Bold',
+  },
+  {
+    name: 'WMFRotis-Light',
+    fontFamily: 'WMFRotis-Light',
+  },
+  {
+    name: 'WMFRotis-LightItalic',
+    fontFamily: 'WMFRotis-LightItalic',
+  },
+  {
+    name: 'WMFRotis-Medium',
+    fontFamily: 'WMFRotis-Medium',
   },
 ];
 
