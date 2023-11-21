@@ -3,15 +3,8 @@
     <Layout>
       <!-- 头部区域 -->
       <Header v-if="state.show">
-        <!-- logo -->
-        <!-- <span class="logo">
-          <a href="https://github.com/nihaojob/vue-fabric-editor" target="_blank">
-            <Icon type="logo-github" :size="30" />
-          </a>
-        </span> -->
-
         <!-- 导入 -->
-        <!-- <import-JSON></import-JSON> -->
+        <import-JSON></import-JSON>
         <Divider type="vertical" />
         <import-file></import-file>
         <Divider type="vertical" />
@@ -37,24 +30,24 @@
       <Content style="display: flex; height: calc(100vh - 64px)">
         <!-- 左侧区域 -->
         <div v-if="state.show" :class="`left-bar ${state.toolsBarShow && 'show-tools-bar'}`">
-          <!-- <Menu :active-name="state.menuActive" accordion @on-select="showToolsBar" width="65px">
-            <MenuItem :name="1" class="menu-item">
+          <Menu :active-name="state.menuActive" accordion @on-select="showToolsBar" width="65px">
+            <!-- <MenuItem :name="1" class="menu-item">
               <Icon type="md-book" size="24" />
               <div>{{ $t('templates') }}</div>
-            </MenuItem>
+            </MenuItem> -->
             <MenuItem :name="2" class="menu-item">
               <Icon type="md-images" size="24" />
               <div>{{ $t('elements') }}</div>
             </MenuItem>
-            <MenuItem :name="3" class="menu-item">
+            <!-- <MenuItem :name="3" class="menu-item">
               <Icon type="ios-leaf-outline" size="24" />
               <div>{{ $t('material.cartoon') }}</div>
-            </MenuItem>
+            </MenuItem> -->
             <MenuItem :name="4" class="menu-item">
               <Icon type="md-reorder" size="24" />
               <div>{{ $t('layers') }}</div>
             </MenuItem>
-          </Menu> -->
+          </Menu>
 
           <div class="content" v-show="state.toolsBarShow">
             <!-- 生成模板 -->
@@ -62,22 +55,22 @@
               <import-tmpl></import-tmpl>
             </div> -->
             <!-- 常用元素 -->
-            <div class="left-panel">
+            <div v-show="state.menuActive === 2" class="left-panel">
               <tools></tools>
-              <!-- <fontTmpl></fontTmpl> -->
+              <fontTmpl></fontTmpl>
             </div>
             <!-- 卡通素材 -->
             <!-- <div v-show="state.menuActive === 3" class="left-panel">
               <importSvgEl></importSvgEl>
             </div> -->
             <!-- 图层设置 -->
-            <!-- <div v-show="state.menuActive === 4" class="left-panel">
+            <div v-show="state.menuActive === 4" class="left-panel">
               <layer></layer>
-            </div> -->
+            </div>
           </div>
 
           <!-- 关闭按钮 -->
-          <!-- <div class="close-btn" v-show="state.toolsBarShow" @click="hideToolsBar"></div> -->
+          <div class="close-btn" v-show="state.toolsBarShow" @click="hideToolsBar"></div>
         </div>
 
         <!-- 画布区域 -->
@@ -191,7 +184,7 @@ const canvasEditor = new Editor();
 const event = new CanvasEventEmitter();
 
 const state = reactive({
-  menuActive: 1,
+  menuActive: 2,
   show: false,
   toolsBarShow: true,
   attrBarShow: true,
@@ -296,7 +289,7 @@ provide('canvasEditor', canvasEditor);
   position: relative;
 
   &.show-tools-bar {
-    width: 100px;
+    width: 380px;
   }
 }
 // 右侧容器
@@ -409,7 +402,7 @@ provide('canvasEditor', canvasEditor);
 
 .content {
   flex: 1;
-  width: 100px;
+  width: 220px;
   padding: 10px;
   padding-top: 0;
   height: 100%;
