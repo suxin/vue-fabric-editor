@@ -16,6 +16,9 @@
         <span>纯色</span>
       </template>
     </iSwitch>
+    <label style="margin: 0 6px 12px 24px; color: #000">取色面板:</label>
+    <input type="color" v-model="html5Color" />
+    <label style="margin-left: 6px; color: #000; font-size: 15px">{{ html5Color }}</label>
     <!-- 渐变 -->
     <div v-if="isGradient">
       <div class="gradient-bar" :style="bgStr"></div>
@@ -113,6 +116,7 @@ const isGradient = ref(false);
 const fill = ref('');
 // 渐变
 const bgStr = ref('background: linear-gradient(124deg, rgb(28, 27, 27) 0%, rgb(255, 0, 0) 100%);');
+const html5Color = ref('#ffffff');
 const currentGradient = reactive({
   type: 'linear',
   degree: 0,
