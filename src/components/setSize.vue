@@ -72,6 +72,11 @@ let width = ref(DefaultSize.width);
 let height = ref(DefaultSize.height);
 let presetSize = reactive([
   {
+    label: t('xbj_main'),
+    width: 800,
+    height: 800,
+  },
+  {
     label: t('red_book_vertical'),
     width: 900,
     height: 1200,
