@@ -55,6 +55,86 @@ const cnList = [
     name: '阿里巴巴-Regular',
     fontFamily: '阿里巴巴-Regular',
   },
+  {
+    name: '方正黑体_GBK',
+    fontFamily: '方正黑体_GBK',
+  },
+  {
+    name: '方正黑体简体',
+    fontFamily: '方正黑体简体',
+  },
+  {
+    name: '方正兰亭超细黑简体',
+    fontFamily: '方正兰亭超细黑简体',
+  },
+  {
+    name: '方正兰亭粗黑_GBK',
+    fontFamily: '方正兰亭粗黑_GBK',
+  },
+  {
+    name: '方正兰亭粗黑简',
+    fontFamily: '方正兰亭粗黑简',
+  },
+  {
+    name: '方正兰亭粗黑简体',
+    fontFamily: '方正兰亭粗黑简体',
+  },
+  {
+    name: '方正兰亭大黑_GBK',
+    fontFamily: '方正兰亭大黑_GBK',
+  },
+  {
+    name: '方正兰亭黑_GBK',
+    fontFamily: '方正兰亭黑_GBK',
+  },
+  {
+    name: '方正兰亭黑简',
+    fontFamily: '方正兰亭黑简',
+  },
+  {
+    name: '方正兰亭特黑',
+    fontFamily: '方正兰亭特黑',
+  },
+  {
+    name: '方正兰亭特黑长简',
+    fontFamily: '方正兰亭特黑长简',
+  },
+  {
+    name: '方正兰亭特黑长简_GBK',
+    fontFamily: '方正兰亭特黑长简_GBK',
+  },
+  {
+    name: '方正兰亭细黑',
+    fontFamily: '方正兰亭细黑',
+  },
+  {
+    name: '方正兰亭细黑_GBK',
+    fontFamily: '方正兰亭细黑_GBK',
+  },
+  {
+    name: '方正兰亭细黑简体',
+    fontFamily: '方正兰亭细黑简体',
+  },
+  {
+    name: '方正兰亭纤黑',
+    fontFamily: '方正兰亭纤黑',
+  },
+  {
+    name: '方正兰亭纤黑_GBK',
+    fontFamily: '方正兰亭纤黑_GBK',
+  },
+  {
+    name: '方正兰亭中粗黑_GBK',
+    fontFamily: '方正兰亭中粗黑_GBK',
+  },
+  {
+    name: '方正兰亭中黑_GBK',
+    fontFamily: '方正兰亭中黑_GBK',
+  },
+  {
+    name: '方正兰亭准黑_GBK',
+    fontFamily: '方正兰亭准黑_GBK',
+  },
 ];
 const enList = [
   {
@@ -100,6 +180,26 @@ const enList = [
   {
     name: 'WMFRotis-Medium',
     fontFamily: 'WMFRotis-Medium',
+  },
+  {
+    name: 'OPPOSans-B',
+    fontFamily: 'OPPOSans-B',
+  },
+  {
+    name: 'OPPOSans-H',
+    fontFamily: 'OPPOSans-H',
+  },
+  {
+    name: 'OPPOSans-L',
+    fontFamily: 'OPPOSans-L',
+  },
+  {
+    name: 'OPPOSans-M',
+    fontFamily: 'OPPOSans-M',
+  },
+  {
+    name: 'OPPOSans-R',
+    fontFamily: 'OPPOSans-R',
   },
 ];
 

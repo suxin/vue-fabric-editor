@@ -90,3 +90,103 @@
   font-family: 'WMFRotis-Medium';
   src: url('./cn/WMFRotis-Medium.otf');
 }
+@font-face {
+  font-family: 'OPPOSans-B';
+  src: url('./cn/OPPOSans-B.ttf');
+}
+@font-face {
+  font-family: 'OPPOSans-H';
+  src: url('./cn/OPPOSans-H.ttf');
+}
+@font-face {
+  font-family: 'OPPOSans-L';
+  src: url('./cn/OPPOSans-L.ttf');
+}
+@font-face {
+  font-family: 'OPPOSans-M';
+  src: url('./cn/OPPOSans-M.ttf');
+}
+@font-face {
+  font-family: 'OPPOSans-R';
+  src: url('./cn/OPPOSans-M.ttf');
+}
+@font-face {
+  font-family: '方正黑体_GBK';
+  src: url('./cn/方正黑体_GBK.TTF');
+}
+@font-face {
+  font-family: '方正黑体简体';
+  src: url('./cn/方正黑体简体.TTF');
+}
+@font-face {
+  font-family: '方正兰亭超细黑简体';
+  src: url('./cn/方正兰亭超细黑简体.TTF');
+}
+@font-face {
+  font-family: '方正兰亭粗黑_GBK';
+  src: url('./cn/方正兰亭粗黑_GBK.TTF');
+}
+@font-face {
+  font-family: '方正兰亭粗黑简';
+  src: url('./cn/方正兰亭粗黑简.TTF');
+}
+@font-face {
+  font-family: '方正兰亭粗黑简体';
+  src: url('./cn/方正兰亭粗黑简体.TTF');
+}
+@font-face {
+  font-family: '方正兰亭大黑_GBK';
+  src: url('./cn/方正兰亭大黑_GBK.ttf');
+}
+@font-face {
+  font-family: '方正兰亭黑_GBK';
+  src: url('./cn/方正兰亭黑_GBK.TTF');
+}
+@font-face {
+  font-family: '方正兰亭黑简';
+  src: url('./cn/方正兰亭黑简.TTF');
+}
+@font-face {
+  font-family: '方正兰亭特黑';
+  src: url('./cn/方正兰亭特黑.otf');
+}
+@font-face {
+  font-family: '方正兰亭特黑长简';
+  src: url('./cn/方正兰亭特黑长简.TTF');
+}
+@font-face {
+  font-family: '方正兰亭特黑长简_GBK';
+  src: url('./cn/方正兰亭特黑长简_GBK.TTF');
+}
+@font-face {
+  font-family: '方正兰亭细黑';
+  src: url('./cn/方正兰亭细黑.TTF');
+}
+@font-face {
+  font-family: '方正兰亭细黑_GBK';
+  src: url('./cn/方正兰亭细黑_GBK.TTF');
+}
+@font-face {
+  font-family: '方正兰亭细黑简体';
+  src: url('./cn/方正兰亭细黑简体.TTF');
+}
+@font-face {
+  font-family: '方正兰亭纤黑';
+  src: url('./cn/方正兰亭纤黑.TTF');
+}
+@font-face {
+  font-family: '方正兰亭纤黑_GBK';
+  src: url('./cn/方正兰亭纤黑_GBK.ttf');
+}
+@font-face {
+  font-family: '方正兰亭中粗黑_GBK';
+  src: url('./cn/方正兰亭中粗黑_GBK.ttf');
+}
+@font-face {
+  font-family: '方正兰亭中黑_GBK';
+  src: url('./cn/方正兰亭中黑_GBK.TTF');
+}
+@font-face {
+  font-family: '方正兰亭准黑_GBK';
+  src: url('./cn/方正兰亭准黑_GBK.ttf');
+}
