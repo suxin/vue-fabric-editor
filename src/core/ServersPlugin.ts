@@ -118,13 +118,13 @@ class ServersPlugin {
     });
   }
 
-  saveImg() {
+  saveImg(type = 'png') {
     this.editor.hooksEntity.hookSaveBefore.callAsync('', () => {
-      const option = this._getSaveOption();
+      const option = this._getSaveOption(type);
       this.canvas.setViewportTransform([1, 0, 0, 1, 0, 0]);
       const dataUrl = this.canvas.toDataURL(option);
       this.editor.hooksEntity.hookSaveAfter.callAsync(dataUrl, () => {
-        downFile(dataUrl, 'png');
+        downFile(dataUrl, type);
       });
     });
   }
@@ -158,15 +158,15 @@ class ServersPlugin {
     };
   }
 
-  _getSaveOption() {
+  _getSaveOption(type = 'png') {
     const workspace = this.canvas
       .getObjects()
       .find((item: fabric.Object) => item.id === 'workspace');
     const { left, top, width, height } = workspace as fabric.Object;
     const option = {
       name: 'New Image',
-      format: 'png',
-      quality: 1,
+      format: type === 'jpg' ? 'jpeg' : type,
+      quality: 0.7,
       width,
       height,
       left,

@@ -21,6 +21,7 @@
       <template #list>
         <DropdownMenu>
           <DropdownItem name="clipboard">{{ $t('copy_to_clipboard') }}</DropdownItem>
+          <DropdownItem name="saveJpg">{{ $t('save_as_jpg') }}</DropdownItem>
           <DropdownItem name="saveImg">{{ $t('save_as_picture') }}</DropdownItem>
           <DropdownItem name="saveSvg">{{ $t('save_as_svg') }}</DropdownItem>
           <DropdownItem name="saveJson" divided>{{ $t('save_as_json') }}</DropdownItem>
@@ -56,6 +57,10 @@ const cbMap = {
 
   saveImg() {
     canvasEditor.saveImg();
+  },
+
+  saveJpg() {
+    canvasEditor.saveImg('jpg');
   },
 };
 

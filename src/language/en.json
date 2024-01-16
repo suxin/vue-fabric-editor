@@ -20,6 +20,7 @@
   "keep": "Save",
   "copy_to_clipboard": "Copy to clipboard",
   "save_as_picture": "Save as picture",
+  "save_as_jpg": "Save as JPG",
   "save_as_svg": "Save as SVG",
   "save_as_json": "Save as JSON",
   "layers": "Layers",
