@@ -91,6 +91,7 @@
   "insertFile": {
     "insert": "插入",
     "insert_picture": "插入图片",
+    "insert_picture_batch": "批量合图",
     "insert_SVG": "插入SVG元素",
     "insert_SVGStr": "插入SVG字符",
     "insert_SVGStr_placeholder": "请输入SVG字符串",

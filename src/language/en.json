@@ -87,6 +87,7 @@
   "insertFile": {
     "insert": "insert",
     "insert_picture": "Insert picture",
+    "insert_picture_batch": "Insert picture batch",
     "insert_SVG": "Insert SVG",
     "insert_SVGStr": "Insert SVG String",
     "insert_SVGStr_placeholder": "Please enter SVG String",

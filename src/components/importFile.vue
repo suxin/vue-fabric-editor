@@ -17,6 +17,10 @@
         <DropdownMenu>
           <!-- 图片 -->
           <DropdownItem name="insertImg">{{ $t('insertFile.insert_picture') }}</DropdownItem>
+          <!-- 批量图片 -->
+          <DropdownItem name="insertImgBatch">
+            {{ $t('insertFile.insert_picture_batch') }}
+          </DropdownItem>
           <!-- SVG -->
           <DropdownItem name="insertSvg">{{ $t('insertFile.insert_SVG') }}</DropdownItem>
           <!-- SVG 字符串 -->
@@ -60,6 +64,12 @@ const HANDLEMAP = {
           insertImgFile(file);
         });
       });
+    });
+  },
+  // 批量合图
+  insertImgBatch: function () {
+    selectFiles({ accept: 'image/*', multiple: true }).then((fileList) => {
+      insertImgFileBatch(fileList, 0);
     });
   },
   // 插入Svg
@@ -116,6 +126,48 @@ function insertImgFile(file) {
     // 删除页面中的图片元素
     imgEl.remove();
   };
+}
+
+// 批量合成文件
+function insertImgFileBatch(fileList, i) {
+  if (fileList.length > i) {
+    getImgStr(fileList[i]).then((file) => {
+      if (!file) throw new Error('file is undefined');
+      const imgEl = document.createElement('img');
+      imgEl.src = file;
+      // 插入页面
+      document.body.appendChild(imgEl);
+      imgEl.onload = () => {
+        // 创建图片对象
+        const imgInstance = new fabric.Image(imgEl, {
+          id: uuid(),
+          name: '图片1',
+          left: 0,
+          top: 0,
+        });
+        // 设置缩放
+        canvasEditor.canvas.add(imgInstance);
+        canvasEditor.canvas.setActiveObject(imgInstance);
+        // const actives = canvasEditor.canvas.getActiveObjects();
+        // if (actives && actives.length === 1) {
+        const activeObject = canvasEditor.canvas.getActiveObjects()[0];
+        // console.log('activeObject: ', activeObject);
+        activeObject && activeObject.sendToBack();
+        canvasEditor.canvas.renderAll();
+        const workspace = canvasEditor.canvas.getObjects().find((item) => item.id === 'workspace');
+        workspace && workspace.sendToBack();
+        canvasEditor.saveImg('jpg');
+        canvasEditor.hooksEntity.hookSaveAfter.callAsync('', () => {
+          setTimeout(() => {
+            canvasEditor.del();
+            insertImgFileBatch(fileList, i + 1);
+          }, 500);
+        });
+        // 删除页面中的图片元素
+        imgEl.remove();
+      };
+    });
+  }
 }
 
 // 插入文件元素
