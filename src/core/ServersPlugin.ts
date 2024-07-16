@@ -166,7 +166,7 @@ class ServersPlugin {
     const option = {
       name: 'New Image',
       format: type === 'jpg' ? 'jpeg' : type,
-      quality: 1,
+      quality: 0.9,
       width,
       height,
       left,
