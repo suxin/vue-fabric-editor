@@ -2,12 +2,14 @@
   "templates": "Templates",
   "elements": "Elements",
   "background": "Background",
+  "placeholder": "Please input",
   "size": "Size",
   "width": "Width",
   "height": "Height",
   "grid": "Grid",
   "common_elements": "Common Elements",
   "draw_elements": "Draw Elements",
+  "code_img": "Code Img",
   "color_macthing": "Macthing",
   "background_texture": "Background Texture",
   "picture": "picture",
@@ -20,7 +22,6 @@
   "keep": "Save",
   "copy_to_clipboard": "Copy to clipboard",
   "save_as_picture": "Save as picture",
-  "save_as_jpg": "Save as JPG",
   "save_as_svg": "Save as SVG",
   "save_as_json": "Save as JSON",
   "layers": "Layers",
@@ -33,6 +34,24 @@
   "import_files": "Import files",
   "select_json": "Select JSON",
   "repleaceImg": "repleace Image",
+  "waterMark": {
+    "text": "WaterMark",
+    "modalTitle": "WaterMark Setting",
+    "setting": {
+      "name": "Mark Name",
+      "size": "Mark Size",
+      "color": "Color",
+      "angle": "Mark Angle",
+      "position": {
+        "label": "Mark Position",
+        "lt": "Left Top",
+        "rt": "Right Top",
+        "lb": "Left Bottom",
+        "rb": "Right Bottom",
+        "full": "Full"
+      }
+    }
+  },
   "material": {
     "cartoon": "cartoon"
   },
@@ -87,8 +106,8 @@
   "insertFile": {
     "insert": "insert",
     "insert_picture": "Insert picture",
-    "insert_picture_batch": "Insert picture batch",
     "insert_SVG": "Insert SVG",
+    "insert_PSD": "insert PSD",
     "insert_SVGStr": "Insert SVG String",
     "insert_SVGStr_placeholder": "Please enter SVG String",
     "modal_tittle": "Please enter"
@@ -114,6 +133,7 @@
   "alert": {
     "loading_fonts": "Loading fonts, please wait...",
     "loading_fonts_failed": "Fonts failed to load, please try again",
+    "loading_fonts_success": "Fonts success to load！",
     "loading_data": "Loading data...",
     "select_image": "Please select a background image",
     "select_file": "Select a file",
@@ -141,6 +161,7 @@
   "phone_wallpaper": "Phone Wallpaper",
   "attributes": {
     "id": "ID",
+    "linkData": "linkData",
     "font": "Font",
     "align": "Align",
     "bold": "Bold:",
@@ -158,12 +179,17 @@
     "shadow": "Shadow",
     "blur": "Blur",
     "offset_x": "X",
-    "offset_y": "Y"
+    "offset_y": "Y",
+    "borderRadiusX": "radiusX",
+    "borderRadiusY": "radiusY",
+    "rx_ry": "Rounded"
   },
   "setSizeTip": "Resize canvas",
   "tip": "tip",
   "clearTip": "Are you sure you want to clear it?",
   "replaceTip": "Are you sure you want to add to the canvas?",
   "ok": "ok",
-  "cancel": "cancel"
+  "cancel": "cancel",
+  "cleanUp": "cleanUp",
+  "mine": "Mine"
 }

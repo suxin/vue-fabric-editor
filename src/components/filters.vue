@@ -2,12 +2,15 @@
  * @Author: 秦少卫
  * @Date: 2023-04-06 23:04:38
  * @LastEditors: 秦少卫
- * @LastEditTime: 2023-07-16 12:48:28
+ * @LastEditTime: 2024-05-21 15:51:52
  * @Description: 图片滤镜
 -->
 
 <template>
   <div v-if="mixinState.mSelectMode === 'one' && state.type === 'image'" class="box">
+    <Divider plain orientation="left">
+      <h4>图片滤镜</h4>
+    </Divider>
     <Collapse>
       <Panel name="1">
         {{ $t('filters.simple') }}
@@ -84,7 +87,6 @@ import useSelect from '@/hooks/select';
 import { uiType, paramsFilters, combinationFilters } from '@/config/constants/filter';
 
 const { fabric, mixinState, canvasEditor } = useSelect();
-const event = inject('event');
 const update = getCurrentInstance();
 // 无参数滤镜
 const noParamsFilters = {
@@ -172,11 +174,11 @@ const handleSelectOne = () => {
 };
 
 onMounted(() => {
-  event.on('selectOne', handleSelectOne);
+  canvasEditor.on('selectOne', handleSelectOne);
 });
 
 onBeforeUnmount(() => {
-  event.off('selectOne', handleSelectOne);
+  canvasEditor.off('selectOne', handleSelectOne);
 });
 
 // 图片地址拼接

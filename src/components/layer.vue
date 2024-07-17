@@ -2,7 +2,7 @@
  * @Author: 秦少卫
  * @Date: 2022-09-03 19:16:55
  * @LastEditors: 秦少卫
- * @LastEditTime: 2023-07-24 23:13:51
+ * @LastEditTime: 2024-07-06 17:59:51
  * @Description: 图层面板
 -->
 
@@ -17,12 +17,22 @@
           :key="item.id"
           :class="isSelect(item) && 'active'"
         >
-          <Tooltip :content="item.name || item.text || item.type" placement="left">
-            <div class="ellipsis">
-              <span :class="isSelect(item) && 'active'" v-html="iconType(item.type)"></span>
-              | {{ textType(item.type, item) }}
-            </div>
-          </Tooltip>
+          <Row class="ellipsis">
+            <Col span="20">
+              <Tooltip :content="item.name || item.text || item.type" placement="left">
+                <span :class="isSelect(item) && 'active'" v-html="iconType(item.type)"></span>
+                | {{ textType(item.type, item) }}
+              </Tooltip>
+            </Col>
+            <Col span="4">
+              <Button
+                long
+                :icon="item.isLock ? 'md-lock' : 'md-unlock'"
+                type="text"
+                @click="doLock(item)"
+              ></Button>
+            </Col>
+          </Row>
         </div>
       </div>
       <!-- 层级调整按钮 -->
@@ -42,6 +52,7 @@
 </template>
 
 <script setup name="Layer">
+import { uniqBy } from 'lodash-es';
 import useSelect from '@/hooks/select';
 const { canvasEditor, fabric, mixinState } = useSelect();
 
@@ -114,13 +125,13 @@ const up = () => {
   canvasEditor.up();
 };
 const upTop = () => {
-  canvasEditor.upTop();
+  canvasEditor.toFront();
 };
 const down = () => {
   canvasEditor.down();
 };
 const downTop = () => {
-  canvasEditor.downTop();
+  canvasEditor.toBack();
 };
 
 const getList = () => {
@@ -134,19 +145,26 @@ const getList = () => {
   ]
     .reverse()
     .map((item) => {
-      const { type, id, name, text } = item;
+      const { type, id, name, text, selectable } = item;
       return {
         type,
         id,
         name,
         text,
+        isLock: !selectable,
       };
     });
+  list.value = uniqBy(unref(list), 'id');
+};
+
+const doLock = (item) => {
+  select(item.id);
+  item.isLock ? canvasEditor.unLock() : canvasEditor.lock();
+  canvasEditor.canvas.discardActiveObject();
 };
 
 onMounted(() => {
-  // 当选择画布中的对象时，该对象不出现在顶层。
-  canvasEditor.canvas.preserveObjectStacking = true;
+  getList();
   canvasEditor.canvas.on('after:render', getList);
 });
 </script>
@@ -161,9 +179,9 @@ onMounted(() => {
   display: block;
 }
 
-:deep(.ivu-tooltip-rel) {
-  display: block;
-}
+// :deep(.ivu-tooltip-rel) {
+//   display: block;
+// }
 .box {
   width: 100%;
 }

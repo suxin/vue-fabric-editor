@@ -44,6 +44,23 @@
     "insert_SVGStr_placeholder": "Please enter SVG String",
     "modal_tittle": "Please enter"
   },
+  "waterMark": {
+    "text": "WaterMark",
+    "modalTitle": "WaterMark Setting",
+    "setting": {
+        "name": "Mark Name",
+        "size": "MarK Size",
+        "angle": "Mark Angle",
+        "position": {
+            "label": "Mark Position",
+            "lt": "Left Top",
+            "rt": "Right Top",
+            "lb": "Left Bottom",
+            "rb": "Right Bottom",
+            "full": "Full"
+        }
+    }
+  },
   "upload_background": "Carregar plano de fundo",
   "mouseMenu": {
     "layer": "Gestão de camadas",
@@ -60,11 +77,12 @@
   "alert": {
     "loading_fonts": "Carregando fontes, aguarde...",
     "loading_fonts_failed": "Falha ao carregar as fontes, tente novamente",
+    "loading_fonts_success": "O tipo de letra foi carregado com sucesso！",
     "loading_data": "Carregando dados...",
     "select_image": "Por favor, selecione uma imagem de plano de fundo",
     "select_file": "Selecione um arquivo",
-    "copied_sucessful": "复制成功",
-    "fail_copy": "复制失败"
+    "copied_sucessful": "A cópia foi bem sucedida",
+    "fail_copy": "a cópia falhou"
   },
   "fruits": "Frutas de desenhos animados",
   "sports": "Esportes",
@@ -105,6 +123,7 @@
     "blur": "Blur",
     "offset_x": "X",
     "offset_y": "Y",
+    "rx_ry": "Rounded",
     "picture_filter": "Filtro"
   }
 }

@@ -2,23 +2,26 @@
  * @Author: 秦少卫
  * @Date: 2023-04-06 22:26:57
  * @LastEditors: 秦少卫
- * @LastEditTime: 2023-07-05 01:04:30
+ * @LastEditTime: 2024-05-21 15:52:16
  * @Description: 图片替换
 -->
 
 <template>
-  <div v-if="mixinState.mSelectMode === 'one' && type === 'image'" class="box attr-item">
-    <Button @click="repleace" type="text" long>{{ $t('repleaceImg') }}</Button>
+  <div v-if="mixinState.mSelectMode === 'one' && type === 'image'" class="attr-item-box">
+    <div class="bg-item">
+      <Button @click="repleace" type="text" long>{{ $t('repleaceImg') }}</Button>
+    </div>
   </div>
 </template>
 
 <script setup name="ReplaceImg">
 import useSelect from '@/hooks/select';
 
-import { getImgStr, selectFiles, insertImgFile } from '@/utils/utils';
+import { Utils } from '@kuaitu/core';
+const { getImgStr, selectFiles, insertImgFile } = Utils;
 
 const update = getCurrentInstance();
-const event = inject('event');
+// const canvasEditor = inject('canvasEditor');
 const { mixinState, canvasEditor } = useSelect();
 const type = ref('');
 
@@ -54,10 +57,15 @@ const init = () => {
 };
 
 onMounted(() => {
-  event.on('selectOne', init);
+  canvasEditor.on('selectOne', init);
 });
 
 onBeforeUnmount(() => {
-  event.off('selectOne', init);
+  canvasEditor.off('selectOne', init);
 });
 </script>
+<style lang="less" scoped>
+.attr-item-box {
+  margin-top: 8px;
+}
+</style>

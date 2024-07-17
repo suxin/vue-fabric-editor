@@ -2,7 +2,7 @@
  * @Author: 秦少卫
  * @Date: 2022-09-03 19:16:55
  * @LastEditors: 秦少卫
- * @LastEditTime: 2023-07-16 12:51:11
+ * @LastEditTime: 2024-07-06 17:23:50
  * @Description: 插入SVG元素
 -->
 
@@ -17,10 +17,6 @@
         <DropdownMenu>
           <!-- 图片 -->
           <DropdownItem name="insertImg">{{ $t('insertFile.insert_picture') }}</DropdownItem>
-          <!-- 批量图片 -->
-          <DropdownItem name="insertImgBatch">
-            {{ $t('insertFile.insert_picture_batch') }}
-          </DropdownItem>
           <!-- SVG -->
           <DropdownItem name="insertSvg">{{ $t('insertFile.insert_SVG') }}</DropdownItem>
           <!-- SVG 字符串 -->
@@ -46,7 +42,9 @@
 </template>
 
 <script name="ImportFile" setup>
-import { getImgStr, selectFiles } from '@/utils/utils';
+import { Utils } from '@kuaitu/core';
+const { getImgStr, selectFiles } = Utils;
+
 import useSelect from '@/hooks/select';
 import { v4 as uuid } from 'uuid';
 
@@ -64,12 +62,6 @@ const HANDLEMAP = {
           insertImgFile(file);
         });
       });
-    });
-  },
-  // 批量合图
-  insertImgBatch: function () {
-    selectFiles({ accept: 'image/*', multiple: true }).then((fileList) => {
-      insertImgFileBatch(fileList, 0);
     });
   },
   // 插入Svg
@@ -93,9 +85,10 @@ const HANDLEMAP = {
       const item = fabric.util.groupSVGElements(objects, {
         ...options,
         name: 'defaultSVG',
-        id: uuid(),
       });
-      canvasEditor.canvas.add(item).centerObject(item).renderAll();
+      canvasEditor.addBaseType(item, {
+        scale: true,
+      });
     });
   },
 };
@@ -111,63 +104,13 @@ function insertImgFile(file) {
   imgEl.src = file;
   // 插入页面
   document.body.appendChild(imgEl);
-  imgEl.onload = () => {
-    // 创建图片对象
-    const imgInstance = new fabric.Image(imgEl, {
-      id: uuid(),
-      name: '图片1',
-      left: 0,
-      top: 0,
+  imgEl.onload = async () => {
+    const imgItem = await canvasEditor.createImgByElement(imgEl);
+    canvasEditor.addBaseType(imgItem, {
+      scale: true,
     });
-    // 设置缩放
-    canvasEditor.canvas.add(imgInstance);
-    canvasEditor.canvas.setActiveObject(imgInstance);
-    canvasEditor.canvas.renderAll();
-    // 删除页面中的图片元素
     imgEl.remove();
   };
-}
-
-// 批量合成文件
-function insertImgFileBatch(fileList, i) {
-  if (fileList.length > i) {
-    getImgStr(fileList[i]).then((file) => {
-      if (!file) throw new Error('file is undefined');
-      const imgEl = document.createElement('img');
-      imgEl.src = file;
-      // 插入页面
-      document.body.appendChild(imgEl);
-      imgEl.onload = () => {
-        // 创建图片对象
-        const imgInstance = new fabric.Image(imgEl, {
-          id: uuid(),
-          name: '图片1',
-          left: 0,
-          top: 0,
-        });
-        // 设置缩放
-        canvasEditor.canvas.add(imgInstance);
-        canvasEditor.canvas.setActiveObject(imgInstance);
-        // const actives = canvasEditor.canvas.getActiveObjects();
-        // if (actives && actives.length === 1) {
-        const activeObject = canvasEditor.canvas.getActiveObjects()[0];
-        // console.log('activeObject: ', activeObject);
-        activeObject && activeObject.sendToBack();
-        canvasEditor.canvas.renderAll();
-        const workspace = canvasEditor.canvas.getObjects().find((item) => item.id === 'workspace');
-        workspace && workspace.sendToBack();
-        canvasEditor.saveImg('jpg');
-        canvasEditor.hooksEntity.hookSaveAfter.callAsync('', () => {
-          setTimeout(() => {
-            canvasEditor.del();
-            insertImgFileBatch(fileList, i + 1);
-          }, 500);
-        });
-        // 删除页面中的图片元素
-        imgEl.remove();
-      };
-    });
-  }
 }
 
 // 插入文件元素
@@ -179,7 +122,9 @@ function insertSvgFile(svgFile) {
       name: 'defaultSVG',
       id: uuid(),
     });
-    canvasEditor.canvas.add(item).centerObject(item).renderAll();
+    canvasEditor.addBaseType(item, {
+      scale: true,
+    });
   });
 }
 </script>
